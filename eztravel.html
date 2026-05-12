@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ezTravel易遊網 | 易遊世界．觸手可及</title>
   <link rel="icon" type="image/png" sizes="32x32" href="https://assets.eztravel.com.tw/assets/images/common/favicon-32.png">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="eztravel.css">
-  <script src="extravel.js" defer></script>
+  <script src="extravel.js" type="module"></script>
 </head>
 <body>
    <!--* 焦點話題區域 -->
@@ -189,22 +190,28 @@
       </aside>
 
       <!-- 右側 -->
-      <div class="">
+      <div x-data="{freeTrvl: 'recommend', subTab: 'tokyo'}">
         <!-- 標題導覽列 -->
         <ul class="free-trvl-tab">
-          <li><button type="button" class="tab-btn active">精選推薦</button></li>
-          <li><button type="button" class="tab-btn">日本</button></li>
-          <li><button type="button" class="tab-btn">東南亞</button></li>
-          <li><button type="button" class="tab-btn">島嶼/歐洲</button></li>
-          <li><button type="button" class="tab-btn">高雄出發</button></li>
-          <li><button type="button" class="tab-btn">台中出發</button></li>
+          <li><button type="button" class="trvl-tab-btn" @click="freeTrvl= 'recommend'" :class="{'trvl-active': freeTrvl == 'recommend'}">精選推薦</button></li>
+          <li><button type="button" class="trvl-tab-btn" @click=" freeTrvl = 'japan'" :class="{ 'trvl-active' : freeTrvl == 'japan'}">日本</button></li>
+          <li><button type="button" class="trvl-tab-btn" @click=" freeTrvl = 'southeastAsia'" :class="{ 'trvl-active' : freeTrvl == 'southeastAsia'}">東南亞</button></li>
+          <li><button type="button" class="trvl-tab-btn" @click=" freeTrvl = 'islands'" :class="{ 'trvl-active' : freeTrvl == 'islands'}">島嶼/歐洲</button></li>
+          <li><button type="button" class="trvl-tab-btn" @click=" freeTrvl = 'kaohsiung'" :class="{ 'trvl-active' : freeTrvl == 'kaohsiung'}">高雄出發</button></li>
+          <li><button type="button" class="trvl-tab-btn" @click=" freeTrvl = 'taichung'" :class="{ 'trvl-active' : freeTrvl == 'taichung'}">台中出發</button></li>
         </ul>
 
         <!-- 次導覽+卡片 -->
         <div class="tab-content-bar">
           <!-- 次導覽列 -->
-          <ul class="tab-content-tag">
-           <li><button class="tab-content active">推薦專區</button></li>
+          <ul class="tab-content-tag" x-show="freeTrvl == 'recommend'">
+           <li><button class="tab-content-active" >推薦專區</button></li>
+          </ul>  
+          <ul class="tab-content-tag" x-show="freeTrvl == 'japan'">
+           <li><button  @click="subTab = 'tokyo'" :class="{'tab-content-active': subTab == 'tokyo' }" class="tab-content">東京</button></li>
+           <li><button @click="subTab = 'kansai'" :class="{'tab-content-active': subTab == 'kansai' }" class="tab-content">關西</button></li>
+           <li><button @click="subTab = 'okinawa'" :class="{'tab-content-active': subTab == 'okinawa' }" class="tab-content">沖繩</button></li>
+           <li><button @click="subTab = 'hokkaido'" :class="{'tab-content-active': subTab == 'hokkaido' }" class="tab-content">北海道</button></li>
           </ul>  
           <!-- 卡片欄 -->
           <div class="free-trvl-box">
