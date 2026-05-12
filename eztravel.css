@@ -262,7 +262,7 @@ span{
 /* 外層寬度 */
 .free-traval{
   max-width: 1100px;
-  margin: 80px auto 0 auto;
+  margin: 80px auto 50px auto;
 }
 .grid{
   display: grid;
@@ -273,9 +273,9 @@ span{
 /* 側邊欄 */
 aside{
   width: 100%;
-  display: grid;
+  display: flex;
   gap: 20px;
-  align-self: start;
+  flex-direction: column;
 
 }
 
@@ -304,8 +304,10 @@ aside{
   height: 188px;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 64px;
+  /* margin-top: 64px; */
   margin-bottom: 20px;
+  margin-top: auto;
+
 }
 .scroll-img{
   width: 100%;
