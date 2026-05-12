@@ -1,0 +1,433 @@
+:root {
+    --ez-modal-discount-bg: #f1f7f8;
+    --ez-error-title-text: #fc5272;
+    --ez-modal-green-main: #11d073;
+    --ez-modal-green-dark: #0c9251;
+    --ez-modal-green-btn-hover: #3da874;
+    --ez-modal-green-btn-disabled:#a0ecc7;
+    --ez-modal-green-btn-loading: #6dbe97;
+}
+.title::before{
+  content: "";
+  display: block;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+  position: absolute;
+  left: -10px;
+  z-index: -1;
+}
+
+/* ------------------- */
+
+/** 焦點話題 */
+.hot-topic{
+  max-width: 1100px;
+  margin: 50px auto 0 auto;
+  display: grid;
+  gap: 20px;
+  
+
+}
+
+/* grid小箱子 */
+.topic-box{
+  height: 330px;
+  display: grid;
+  gap: 10px;
+  grid-template-areas: 
+  "topic1 topic2 topic4 topic6"
+  "topic1 topic2 topic5 topic6"
+  "topic1 topic3 topic5 topic6"
+  ;
+
+}
+
+.hot-topic .title::before{
+ background-color: #fab617;
+ width: 36px;
+ height: 36px;
+}
+/* 焦點話題：大標 */
+.title{
+  position: relative;
+  max-width: 260px;
+  width: 100%;
+  color: #222;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* 焦點話題：左邊列表 */
+.topic-bigcard{
+  width: 230px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+
+}
+.topic-bigcard h3{
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+
+}
+.topic-box > a:nth-child(1){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/CsA2Go4BN9OvVkDgWEKu4RYhCz4Z-HeISatUOi3YZFU/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2FwcC81NjB4ODIwLzU2MHg4MjBfMjAyNjA1YnJvczIuanBn.jpg");
+
+  grid-area: topic1;
+}
+.topic-box > a:nth-child(2){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/onfg8yHcEAQXWfEWbtu8WzL7RIkmOYDunXjI1WqI61k/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvVVNfMTE5MzAyNTEzLmpwZw.jpg");
+
+  grid-area: topic2;
+}
+.topic-box > a:nth-child(3){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/Hn4gYjaYym7bq9-GZsmFRqYyA7c2MPDLaSLsVJZ6jmo/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8yMzB4MTA0LzIzMHgxMDRfMjAyMzAzMjhBLnBuZw.png");
+
+  grid-area: topic3;
+}
+.topic-box > a:nth-child(4){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/diYBtrCi_2EUGQx_dWuCi9GKzkAFZiD86VaLDMlQQVM/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8yMzB4MTA0LzIwM3gxMDRfMDEwNi5qcGc.jpg");
+
+  grid-area: topic4;
+}
+.topic-box > a:nth-child(5){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%), url("https://image.cdn-eztravel.com.tw/D8bOU1QDwtXO2zNIQaQBKArmI_zG3KAENDxwCvRvPSE/g:ce/q:95/aHR0cHM6Ly9ldmVudC5jZG4tZXp0cmF2ZWwuY29tLnR3L2hwaW1nL2hwL2Jhbm5lci8xMDgweDEwODAvMTA4MHgxMDgwX3BlbmdodWZpcmV3b3JrMl8yNjAzMjYuanBn.jpg");
+
+  grid-area: topic5;
+}
+
+.topic-smallcard{
+  grid-area: topic6;
+  display: grid;
+  gap: 10px;
+}
+
+ /* 焦點話題：右邊列表  */
+.topic-smallcard a{
+  width: 355px;
+  height: 70px;
+  font-size: 14px;
+  background-color: #fafafa;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+
+}
+.topic-smallcard h3{
+  padding: 10px;
+}
+.topic-smallcard img{
+  width: 110px;
+  aspect-ratio: 11 / 7 ;
+  object-fit: cover;
+ }
+
+.topic-smallcard a:hover{
+  color: var(--ez-modal-green-btn-hover);
+  /* !找 */
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
+
+ /** 日本跟團 */
+.japan-tour{
+  max-width: 1100px;
+  margin: 80px auto 0 auto;
+  display: grid;
+  gap: 20px;
+
+}
+/*日本跟團：導覽 */
+.jp-tour-haeder{
+  display: flex;
+  align-items: center;
+  gap: 20px
+  ;
+}
+
+.jp-tour-haeder .title::before,.free-traval .title::before{
+  background-color: #11d073;
+  width: 18px;
+  height: 18px;
+}
+
+
+.tab-bar{
+  display: flex;
+  gap: 22px;
+
+  /* .考慮 */
+  /* flex: 1; */
+}
+.tab-btn{
+  padding: 0 5px;
+  color: #222;
+  font-size: 18px;
+
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  /* . */
+  /* padding: 8px 14px; */
+}
+.tab-btn.active{
+  border-bottom-color: #4caf50;
+
+  color: #4caf50;
+
+  font-weight: 700;
+}
+
+/* 日本跟團：卡片 */
+
+/* 控制隱藏卡片 */
+.jp-tour-tab-content{
+  /* display: none; */
+}
+
+.tab-content.active {
+
+  display: block;
+
+  /* animation:fadeUp 0.3s ease; */
+
+}
+
+.jp-tour-grid{
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr );
+  grid-template-rows: repeat( 2 , 1fr );
+  gap: 20px;
+  height: 395px;
+}
+.japan-card.featured{
+  grid-column: span 2 ;
+  grid-row: span 2;
+}
+
+
+
+/* 日本跟團：卡片背景 */
+.japan-card{
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 10px;
+}
+.small-text{
+  display: flex;
+  justify-content: space-between;
+}
+span{
+  color: #fab617;
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.jp-tour-grid > a:nth-child(1){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/WjidF3sc6lamzvaDykyIPaufcuS3SIrWi57zFB3sIa4/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvc3VtbWVyMjAyNl83Njh4NDAwLmpwZw.jpg");
+}
+.jp-tour-grid > a:nth-child(2){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/y7AdNo2aNTF3DR7vHrk-B-CCVEKxFVvKB3F7TWvYer8/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMjM4NjQyNzkxNS5qcGc.jpg");
+}
+.jp-tour-grid > a:nth-child(3){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/och2Vxcr9puw9ubb6o5sgrOPbRyDfzBmQLqC80Yep-c/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSlBfMzg3MDk1MzExLmpwZw.jpg");
+}
+.jp-tour-grid > a:nth-child(4){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/GYKsrdZrCUD2aUvFhFOTLpvx34jsjZaFkvbA6hcfGXM/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvQVVfNTg5NjI2NTkzLmpwZw.jpg");
+}
+.jp-tour-grid > a:nth-child(5){
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%),url("https://image.cdn-eztravel.com.tw/5xDP-9fpMY-pqrYLtlnXf1BeOCaskpBvQN3PvsosfoU/rs:fit:1000:600:1/g:ce/q:95/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9GUk4vRlJOMDAwMDAxOTQyNS5naWY.png");
+}
+
+/* *自由最夯 */
+/* 外層寬度 */
+.free-traval{
+  max-width: 1100px;
+  margin: 80px auto 0 auto;
+}
+.grid{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 260px 820px;
+}
+
+/* 側邊欄 */
+aside{
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  align-self: start;
+
+}
+
+.search-title{
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+.search-list{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.search-list li{
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+
+/* 輪播圖片 */
+.scroll-box{
+  width: 100%;
+  height: 188px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 64px;
+  margin-bottom: 20px;
+}
+.scroll-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+/*----------- 右側 */
+/* 標題導覽列 */
+.free-trvl-tab{
+  display: flex;
+  gap: 22px;
+}
+
+/* 次導覽列 */
+.tab-content-tag{
+  width: 100%;
+  display: flex;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.tab-content-tag > li:nth-child(1){
+  
+  cursor: pointer;
+}
+.tab-content{
+  color: #666;
+  padding: 5px 10px;
+
+}
+.tab-content.active{
+  color: #fafafa;
+  border-radius: 3px;
+  background-color: #11d073;
+  padding: 5px 10px;
+  margin: 0;
+}
+
+/* 卡片欄 */
+.free-trvl-box{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2 ,1fr);
+  grid-template-rows: repeat( 3 , 1fr);
+  gap: 20px;
+}
+/* 單張卡片 */
+.free-trvl-card{
+  width: 100%;
+  height: 120px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  transition-property: box-shadow;
+  transition-duration: 0.3s;
+  position: relative;
+  /*  */
+  display: flex;
+  
+}
+/* 卡片內照片 */
+.trvl-card-img{
+  width: 165px;
+  height: 120px;
+}
+.trvl-card-img img{
+  width: 100%;
+  height: 100%;
+}
+/* .trvl-card-img::before{
+  content: "";
+  width: 165px;
+  height: 120px;
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%);
+  z-index: 1;
+}   */
+.trvl-card-img p{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: #fff;
+  box-sizing: border-box;
+}
+/* ! */
+.trvl-card-img p::after{
+  background-image: linear-gradient(180deg, rgba(34, 34, 34, 0) 45%, rgba(34, 34, 34, .6) 90%);
+}
+/* 卡片文字 */
+.trvl-card-text{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.trvl-card-text h3{
+  font-weight: 700;
+}
+.trvl-card-text small{
+  text-align: right;
+}
+
+/* 更多按鈕 */
+.more-btn{
+  display: flex;
+  justify-content: end;
+  font-size: 18px;
+}
+.more-btn div{
+  clip-path: circle(50% at 50% 50%);
+  background-color: #60d174;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  color: white;
+  margin-left: 10px;
+
+}
